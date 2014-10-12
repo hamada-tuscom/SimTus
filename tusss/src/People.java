@@ -64,6 +64,12 @@ public class People{
 		}
 	}
 	
+	public int getColorInt(double d){
+		int i=(int)d;
+		if(i<0){return 0;}
+		if(i>=255){return 254;}
+		return i;
+	}
 	
 	public double getLike(People op){
 		for(Like l:likes){
