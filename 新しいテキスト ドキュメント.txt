@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 unko
 add
+=======
+konu
+>>>>>>> origin/master
+I can't understand 
