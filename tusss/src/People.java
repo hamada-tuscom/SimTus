@@ -18,9 +18,10 @@ public class People{
 		likes=new ArrayList<Like>();
 	}
 	
-	public void update(){
+	public void update(ArrayList <People> ops){
 		
 	}
+	
 	
 	
 	
