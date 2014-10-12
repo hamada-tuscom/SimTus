@@ -5,6 +5,7 @@ public class Talk{
 	
 	double x,y;
 	ArrayList <People> participant;
+	public int r,g,b;
 	
 	public void setNewTalk(){
 		

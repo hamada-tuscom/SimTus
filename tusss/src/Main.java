@@ -113,10 +113,16 @@ public class Main extends JFrame implements Runnable{
 		bufG.fillRect(0,0,windowWidth,windowHeight);
 		
 		
+		for(Talk t:talks){
+			bufG.setColor(new Color(150,255,150));
+			bufG.drawOval((int)(t.x-30),(int)(t.y-30),60,60);
+		}
 		
 		for(People p:peoples){
-			bufG.setColor(new Color(150,150,150));
+			bufG.setColor(new Color(p.r,p.g,p.b));
 			bufG.fillOval((int)(p.x-5),(int)(p.y-5),10,10);
+			bufG.setColor(Color.white);
+			bufG.drawOval((int)(p.x-5),(int)(p.y-5),10,10);
 		}
 		
 		

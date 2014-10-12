@@ -12,6 +12,8 @@ public class People{
 	ArrayList <Like> likes;
 	Random rnd;
 	
+	public int r,g,b;
+	
 	public int brave,solo;
 	
 	public People(double x,double y){
@@ -20,6 +22,9 @@ public class People{
 		alone=0;
 		likes=new ArrayList<Like>();
 		rnd=new Random();
+		r=rnd.nextInt(200)+30;
+		g=rnd.nextInt(200)+30;
+		b=rnd.nextInt(200)+30;
 		brave=rnd.nextInt(10);
 		solo=rnd.nextInt(9)+1;
 	}
@@ -28,8 +33,10 @@ public class People{
 		if(alone==0){
 			x+=(50.0-rnd.nextInt(100))/50.0d*solo;
 			y+=(50.0-rnd.nextInt(100))/50.0d*solo;
-			
-			
+			if(x<0){x=0;}
+			if(x>500){x=500;}
+			if(y<0){y=0;}
+			if(y>500){y=500;}
 			
 			People np=null;
 			double range=20;
@@ -42,7 +49,7 @@ public class People{
 				}				
 			}
 			if(range<20){
-				if(getLike(np)/2+brave*2.5+rnd.nextInt(50)>=100){
+				if(getLike(np)/2+brave*5+rnd.nextInt(100)>=100){
 					alone=1;
 					np.alone=1;
 					Talk t=new Talk((x+np.x)/2,(y+np.y)/2);
