@@ -21,7 +21,7 @@ public class Main extends JFrame implements Runnable{
 	int pemutimer;
 
 	ArrayList <People> peoples;
-	
+	ArrayList <Talk> talks;
 	
 	
 	
@@ -55,6 +55,7 @@ public class Main extends JFrame implements Runnable{
 		pemutimer=0;
 		
 		peoples=new ArrayList<People>();
+		talks=new ArrayList<Talk>();
 		
 		
 		
@@ -72,7 +73,7 @@ public class Main extends JFrame implements Runnable{
 			
 			
 			for(People p:peoples){
-				p.update(peoples);
+				p.update(peoples,talks);
 			}
 			
 			

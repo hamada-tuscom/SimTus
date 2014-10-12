@@ -24,12 +24,17 @@ public class People{
 		solo=rnd.nextInt(9)+1;
 	}
 	
-	public void update(ArrayList <People> ops){
+	public void update(ArrayList <People> ops,ArrayList<Talk> talks){
 		if(alone==0){
+			x+=(50.0-rnd.nextInt(100))/50.0d*solo;
+			y+=(50.0-rnd.nextInt(100))/50.0d*solo;
+			
+			
+			
 			People np=null;
 			double range=20;
 			for(People op:ops){
-				if(op==this){continue;}
+				if(op==this || op.alone!=0){continue;}
 				double r=Usefuls.culRange(op.x,op.y,x,y);
 				if(r<range){
 					range=r;
@@ -38,12 +43,13 @@ public class People{
 			}
 			if(range<20){
 				if(getLike(np)/2+brave*2.5+rnd.nextInt(50)>=100){
-					
+					alone=1;
+					np.alone=1;
+					Talk t=new Talk((x+np.x)/2,(y+np.y)/2);
+					t.add(this);
+					t.add(np);
+					talks.add(t);
 				}
-			}
-			else{
-				x+=(50.0-rnd.nextInt(100))/50.0d*solo;
-				y+=(50.0-rnd.nextInt(100))/50.0d*solo;
 			}
 		}
 		else{

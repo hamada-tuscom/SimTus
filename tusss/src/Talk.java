@@ -20,5 +20,9 @@ public class Talk{
 		participant=new ArrayList <People> ();
 	}
 	
+	public void add(People p){
+		participant.add(p);
+	}
+	
 }
 
