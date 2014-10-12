@@ -71,6 +71,11 @@ public class Main extends JFrame implements Runnable{
 		while(true){
 			
 			
+			for(People p:peoples){
+				p.update(peoples);
+			}
+			
+			
 			if(MM.isRClick){
 				pemutimer++;
 				if(pemutimer>5){
