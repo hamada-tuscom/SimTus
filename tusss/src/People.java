@@ -23,7 +23,14 @@ public class People{
 	}
 	
 	
-	
+	public double getLike(People op){
+		for(Like l:likes){
+			if(op==l.op){
+				return l.like;
+			}
+		}
+		return 0;
+	}
 	
 	public void addLike(People op,double v){
 		for(Like l:likes){
