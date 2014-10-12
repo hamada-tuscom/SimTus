@@ -11,7 +11,7 @@ public class Main extends JFrame implements Runnable{
 	Thread thread;
 	final long sleepTime=1000/30;
 	long preTime;
-	final int windowWidth=700,windowHeight=500;
+	final int windowWidth=500,windowHeight=500;
 	KeyManager KM;
 	MouseManager MM;
 	Image bufImg;
@@ -72,6 +72,14 @@ public class Main extends JFrame implements Runnable{
 		while(true){
 			
 			
+			for(int i=0;i<talks.size();i++){
+				talks.get(i).update();
+				if(talks.get(i).participant.size()<=1){
+					talks.remove(i);
+					i--;
+				}
+			}
+			
 			for(People p:peoples){
 				p.update(peoples,talks);
 			}
@@ -114,8 +122,14 @@ public class Main extends JFrame implements Runnable{
 		
 		
 		for(Talk t:talks){
-			bufG.setColor(new Color(150,255,150));
+			bufG.setColor(new Color(t.r,t.g,t.b));
 			bufG.drawOval((int)(t.x-30),(int)(t.y-30),60,60);
+			for(int i=0;i<t.participant.size();i++){
+				for(int j=i+1;j<t.participant.size();j++){
+					bufG.drawLine((int)(t.participant.get(i).x),(int)(t.participant.get(i).y),
+							(int)(t.participant.get(j).x),(int)(t.participant.get(j).y));
+				}
+			}
 		}
 		
 		for(People p:peoples){
@@ -126,8 +140,6 @@ public class Main extends JFrame implements Runnable{
 		}
 		
 		
-		bufG.setColor(new Color(100,200,200));
-		bufG.fillRect(500,0,200,500);
 		
 		g.drawImage(bufImg,ins.left,ins.top,this);
 	}
