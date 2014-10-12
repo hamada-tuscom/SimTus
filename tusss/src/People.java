@@ -80,12 +80,12 @@ public class People{
 			}
 		}
 		else{
-			if(Math.abs(r-join.r)<rnd.nextInt(100)){fun++;}
-			else{fun-=1;}
-			if(Math.abs(g-join.g)<rnd.nextInt(100)){fun++;}
-			else{fun-=1;}
-			if(Math.abs(b-join.b)<rnd.nextInt(100)){fun++;}
-			else{fun-=1;}
+			if(Math.abs(r-join.r)<rnd.nextInt(60)){fun++;}
+			else{fun-=5;}
+			if(Math.abs(g-join.g)<rnd.nextInt(60)){fun++;}
+			else{fun-=5;}
+			if(Math.abs(b-join.b)<rnd.nextInt(60)){fun++;}
+			else{fun-=5;}
 			if(fun>100){fun=100;}
 			if(fun<=0){join.remove(this);}
 		}

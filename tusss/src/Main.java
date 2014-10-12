@@ -85,6 +85,17 @@ public class Main extends JFrame implements Runnable{
 			}
 			
 			
+			if(KM.isSpace()){
+				talks.clear();
+				for(People p:peoples){
+					//p.x=rnd.nextInt(500);
+					//p.y=rnd.nextInt(500);
+					p.join=null;
+					p.alone=0;
+				}
+			}
+			
+			
 			if(MM.isRClick){
 				pemutimer++;
 				if(pemutimer>5){
